@@ -11,3 +11,8 @@ class CitasForm(ModelForm):
     class Meta:
         model = Citas
         fields =["idagenda", "run", "hora", "estado"]
+        
+class PagoForm(ModelForm):
+    class Meta:
+        model = Pago
+        fields =["idpago", "run", "nombrecliente", "precio"]        

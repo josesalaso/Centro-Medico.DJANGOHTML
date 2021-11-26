@@ -34,18 +34,10 @@ class Citas(models.Model):
 #MODELO PAGO
 class Pago(models.Model):
     idpago=models.IntegerField(primary_key=True, verbose_name='Id pago')
-    run=models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    comprobante=models.CharField(max_length=50, verbose_name='Comprobante')
+    run=models.CharField(max_length=10, verbose_name='Rut Medico') 
+    nombrecliente=models.CharField(max_length=50, verbose_name='Nombre Cliente') 
     precio=models.IntegerField(verbose_name='Precio')
     
     def __str__(self):
-        return self.run
+        return self.idpago
     
-#MODELO INFORME
-class Informes(models.Model):
-    idinforme=models.IntegerField(primary_key=True, verbose_name='Id informe')
-    idpago=models.ForeignKey(Pago, on_delete=models.CASCADE)
-    tipoinforme=models.CharField(max_length=50, verbose_name='tipo informe')
-    
-    def __str__(self):
-        return self.idinforme 
