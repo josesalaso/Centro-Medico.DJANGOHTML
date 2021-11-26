@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Agenda
+from .models import Agenda, Citas
 from .forms import CitasForm
 # Create your views here.
 
@@ -15,8 +15,6 @@ def medicos(request):
     return render(request, 'core/medicos.html')
 def ubicaciones(request):
     return render(request, 'core/ubicaciones.html')
-def anularhora(request):
-    return render(request, 'core/anularhora.html')
 
 def reservarhora(request):
     # accediendo al objeto que contiene los datos de la base de datos
@@ -50,3 +48,23 @@ def confirmarhora(request):
 def validaAgenda(idagenda):
     existe=Agenda.objects.filter(idagenda=idagenda).exists()
     return existe
+
+def anularhora(request):
+        # accediendo al objeto que contiene los datos de la base de datos
+    # el metodo all traera todos los productos que estan en la tabla
+    citas = Citas.objects.all()
+    # ahora crearemos una variable que le pase los datos del producto al template
+    datos = {
+        'citas': citas
+    }
+    # ahora lo agregamos para que se envie al templateee
+    return render(request, 'core/anularhora.html', datos)
+
+def delhora(request,id):
+    #el id es el identificador de la tabla productos
+    #buscando los datos en la base de datos
+    citas=Citas.objects.get(idagenda=id)
+    #eliminamos el producto del id buscado
+    citas.delete()
+    #ahora redirigmos a la pagina con el listado
+    return redirect(to="anularhora")
