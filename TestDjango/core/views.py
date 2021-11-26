@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Agenda, Citas
-from .forms import CitasForm
+from .models import Agenda, Citas, Pago
+from .forms import CitasForm, PagoForm
 # Create your views here.
 
 def index(request):
@@ -68,3 +68,38 @@ def delhora(request,id):
     citas.delete()
     #ahora redirigmos a la pagina con el listado
     return redirect(to="anularhora")
+
+def cajeropagar(request):
+    # el view sera el responsable de entregar el form al template
+    datos = {'form': PagoForm}
+    # verificamos que peticion sean post y rescatamos los datos
+    if request.method == 'POST':
+        # con request recuperamos los datos del formulario
+        formulario = PagoForm(request.POST)
+        idpago=request.POST.get("idpago")
+        # validamos el formulario
+        if formulario.is_valid:
+            if not validaPago(idpago):
+                # guardamos en la base de datos
+                formulario.save()
+                # y mostramos un mensaje
+                datos['mensaje'] = "Pagado correctamente correctamente"
+            else:
+                datos['mensaje']="Ya existe un registro asociado a ese codigo "    + idpago  
+    return render(request, 'core/cajeropagar.html', datos)
+
+def validaPago(idpago):
+    existe=Pago.objects.filter(idpago=idpago).exists()
+    return existe
+
+
+def comprobantepago(request):
+    # accediendo al objeto que contiene los datos de la base de datos
+    # el metodo all traera todas las horas que estan en la tabla
+    pago = Pago.objects.all()
+    # ahora crearemos una variable que le pase los datos del producto al template
+    datos = {
+        'pago': pago
+    }
+    # ahora lo agregamos para que se envie al templateee
+    return render(request, 'core/comprobantepago.html', datos)

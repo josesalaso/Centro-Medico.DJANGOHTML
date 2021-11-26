@@ -89,10 +89,35 @@
 
         </header>
 
+        <h1>PAGAR CITA PARA ATENDERSE</h1>
+        <br>
+        <div class="container">
+            <div class="row">
+                <form method="post" action="" id="formulario">
+                    {% csrf_token %}
+                    <div class="row">
+                        {{form.as_table}}
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-danger" id="enviar" value="PAGAR">
+                    <a href="{% url 'comprobantepago' %}" class="btn btn-danger">EMITIR COMPROBANTE</a>
+                    <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+
+                </form>
+            </div>
+            <br>
+            <div class="row">
+                <div class="alert alert-success" role="alert" id="succes">
+                    {{mensaje}}
+                </div>
+            </div>
+            <div class="row">
+                <a href="{% url 'index' %}">Inicio</a>
+            </div>
+        </div>
 
 
 
-        
 
 
     <hr size="10px" color="black" />
