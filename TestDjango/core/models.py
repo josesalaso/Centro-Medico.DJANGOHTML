@@ -23,7 +23,7 @@ class Agenda(models.Model):
     
 #MODELO CITAS_PACIENTE
 class Citas(models.Model):
-    idagenda=models.IntegerField(primary_key=True, verbose_name='Id Agenda')
+    idagenda=models.IntegerField(primary_key=True, verbose_name='Numero Telefonico')
     run=models.CharField(max_length=10, verbose_name='Rut Medico')  
     hora=models.CharField(max_length=50, verbose_name='Hora') 
     estado=models.CharField(max_length=50, verbose_name='NOTAS') 

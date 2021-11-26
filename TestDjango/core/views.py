@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Agenda
-
+from .forms import CitasForm
 # Create your views here.
 
 def index(request):
@@ -29,4 +29,24 @@ def reservarhora(request):
     # ahora lo agregamos para que se envie al templateee
     return render(request, 'core/reservarhora.html', datos)
 def confirmarhora(request):
-    return render(request, 'core/confirmarhora.html')
+    # el view sera el responsable de entregar el form al template
+    datos = {'form': CitasForm}
+    # verificamos que peticion sean post y rescatamos los datos
+    if request.method == 'POST':
+        # con request recuperamos los datos del formulario
+        formulario = CitasForm(request.POST)
+        idagenda=request.POST.get("idagenda")
+        # validamos el formulario
+        if formulario.is_valid:
+            if not validaAgenda(idagenda):
+                # guardamos en la base de datos
+                formulario.save()
+                # y mostramos un mensaje
+                datos['mensaje'] = "Hora Reservada correctamente"
+            else:
+                datos['mensaje']="Ya existe un registro asociado a ese codigo "    + idagenda  
+    return render(request, 'core/confirmarhora.html', datos)
+
+def validaAgenda(idagenda):
+    existe=Agenda.objects.filter(idagenda=idagenda).exists()
+    return existe
