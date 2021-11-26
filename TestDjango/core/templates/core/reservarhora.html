@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <!-- META -->
     <meta charset="UTF-8">
@@ -31,7 +32,7 @@
 </head>
 
 <body>
-    
+
     <!--Header con Menu buscador y Demaces -->
     <div>
         <header>
@@ -39,8 +40,8 @@
             <hr size="10px" color="black" />
             <div class=container>
                 <form class="form-inline my-5 my-lg-2">
-                    <a class="navbar-brand" id=logo href="{% url 'index' %}"><img src="{% static 'core/img/logomedico.png'%}"
-                            height="55vw" width="55vw"></a>
+                    <a class="navbar-brand" id=logo href="{% url 'index' %}"><img
+                            src="{% static 'core/img/logomedico.png'%}" height="55vw" width="55vw"></a>
                     <h3>Centro Medico Galeno </h3>
                     <hr>
                     <div>
@@ -80,7 +81,8 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'reservarhora' %}" tabindex="-1" aria-disabled="true"><b>Reservar
+                            <a class="nav-link" href="{% url 'reservarhora' %}" tabindex="-1"
+                                aria-disabled="true"><b>Reservar
                                     Hora</b></a>
                         </li>
                     </ul>
@@ -89,42 +91,71 @@
 
         </header>
 
+        <h1>RESERVA DE HORA</h1>
+        <br>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Rut Medico</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Especialidad</th>
+                        <th scope="col">Tomar Hora</th>
 
-    <hr size="10px" color="black" />
-    <!--FOOTER -->
-    <footer id=footerprincipal>
-        <div class="row">
-            <div class="col-12 col-md">
 
-                <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Contacto</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted">Telefono: +5697496769</a></li>
-                    <li><a class="text-muted">josalasolivares@gmail.com</a></li>
-                    <li><a class="text-muted">jo.salaso@duocuc.com</a></li>
-                </ul>
-            </div>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ag in agenda %}
+                    <tr>
+                        <td>{{ag.idagenda}}</td>
+                        <td>{{ag.run}}</td>
+                        <td>{{ag.hora}}</td>
+                        <td>{{ag.medicoespecialidad}}</td>
+                        <td><a href="{% url 'confirmarhora'  %}">Tomar Hora</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
 
-            <div class="col-6 col-md">
-                <h5>Redes</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
-                    <li><a class="text-muted" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Acerca</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="{% url 'medicos' %}">Medicos</a></li>
-                    <li><a class="text-muted" href="{% url 'contacto' %}">Contacto</a></li>
-                    <li><a class="text-muted" href="{% url 'ubicaciones' %}">Ubicacion</a></li>
-                    <li><a class="text-muted">Viña del mar, V region</a></li>
-                </ul>
-            </div>
+            </table>
         </div>
-    </footer>
+
+        <hr size="10px" color="black" />
+        <!--FOOTER -->
+        <footer id=footerprincipal>
+            <div class="row">
+                <div class="col-12 col-md">
+
+                    <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted">Telefono: +5697496769</a></li>
+                        <li><a class="text-muted">josalasolivares@gmail.com</a></li>
+                        <li><a class="text-muted">jo.salaso@duocuc.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md">
+                    <h5>Redes</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><a class="text-muted" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Acerca</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="{% url 'medicos' %}">Medicos</a></li>
+                        <li><a class="text-muted" href="{% url 'contacto' %}">Contacto</a></li>
+                        <li><a class="text-muted" href="{% url 'ubicaciones' %}">Ubicacion</a></li>
+                        <li><a class="text-muted">Viña del mar, V region</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
 
 
 </body>
