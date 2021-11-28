@@ -91,31 +91,36 @@
 
         </header>
 
-
-        <h1>AGREGAR AGENDA MEDICO</h1>
+        <h1>MODIFICAR AGENDA MEDICO</h1>
         <br>
         <div class="container">
-            <div class="row">
-                <form method="post" action="" id="formulario">
-                    {% csrf_token %}
-                    <div class="row">
-                        {{form.as_table}}
-                    </div>
-                    <br>
-                    <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
-                    <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
-                    <div id="error" class="alert alert-danger" role="alert"></div>
-                </form>
-            </div>
-            <br>
-            <div class="row">
-                <div class="alert alert-success" role="alert" id="succes">
-                    {{mensaje}}
-                </div>
-            </div>
-            <div class="row">
-                <a href="{% url 'index' %}">Inicio</a>
-            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Rut Medico</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Especialidad</th>
+                        <th scope="col">Modificar</th>
+                        <th scope="col">Eliminar</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ag in agenda %}
+                    <tr>
+                        <td>{{ag.idagenda}}</td>
+                        <td>{{ag.run}}</td>
+                        <td>{{ag.hora}}</td>
+                        <td>{{ag.medicoespecialidad}}</td>
+                        <td><a href="{% url 'modificaragendamedico' ag.idagenda %}">Modificar</a></td>
+                        <td><a href="{% url 'delagenda' ag.idagenda %}">Eliminar</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
         </div>
 
         <hr size="10px" color="black" />

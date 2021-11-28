@@ -90,33 +90,37 @@
             </nav>
 
         </header>
-
-
-        <h1>AGREGAR AGENDA MEDICO</h1>
+        <h1>MARCAR PACIENTE COMO ATENDIDO</h1>
         <br>
         <div class="container">
-            <div class="row">
-                <form method="post" action="" id="formulario">
-                    {% csrf_token %}
-                    <div class="row">
-                        {{form.as_table}}
-                    </div>
-                    <br>
-                    <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
-                    <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
-                    <div id="error" class="alert alert-danger" role="alert"></div>
-                </form>
-            </div>
-            <br>
-            <div class="row">
-                <div class="alert alert-success" role="alert" id="succes">
-                    {{mensaje}}
-                </div>
-            </div>
-            <div class="row">
-                <a href="{% url 'index' %}">Inicio</a>
-            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Rut Medico</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">ESTADO</th>
+                        <th scope="col">MARCAR PACIENTE ATENDIDO</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ci in citas %}
+                    <tr>
+                        <td>{{ci.idagenda}}</td>
+                        <td>{{ci.run}}</td>
+                        <td>{{ci.hora}}</td>
+                        <td>{{ci.estado}}</td>
+                        <td><a href="{% url 'modificarcitapaciente' ci.idagenda %}">MARCAR PACIENTE ATENDIDO</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
         </div>
+
+
 
         <hr size="10px" color="black" />
         <!--FOOTER -->

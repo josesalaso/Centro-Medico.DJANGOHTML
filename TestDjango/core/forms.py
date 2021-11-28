@@ -22,4 +22,6 @@ class PagoForm(ModelForm):
 class AgendaForm(ModelForm):
     class Meta:
         model = Agenda
-        fields =["idagenda", "hora", "medicoespecialidad", "run"]            
+        fields =["idagenda", "hora", "medicoespecialidad", "run"]  
+        
+                  

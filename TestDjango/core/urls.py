@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, reservarhora, registrar, iniciarsesion, contacto, medicos, ubicaciones, anularhora, confirmarhora, delhora, cajeropagar, comprobantepago, secretaria, modificaragendamedico
+from .views import agenda, delagenda, index, reservarhora, registrar, iniciarsesion, contacto, medicos, ubicaciones, anularhora, confirmarhora, delhora, cajeropagar, comprobantepago, secretaria, modificaragendamedico, medico, agregaragenda, modificarcita, modificarcitapaciente
 
 
 urlpatterns = [
@@ -17,6 +17,12 @@ urlpatterns = [
     path('cajeropagar', cajeropagar, name="cajeropagar"),
     path('comprobantepago', comprobantepago, name="comprobantepago"),
     path('secretaria', secretaria, name="secretaria"),
-    path('modificaragendamedico', modificaragendamedico, name="modificaragendamedico"),
+    path('medico', medico, name="medico"),
+    path('modificaragendamedico<id>', modificaragendamedico,name="modificaragendamedico"),
+    path('agregaragenda', agregaragenda, name="agregaragenda"),
+    path('delagenda<id>', delagenda, name="delagenda"),
+    path('agenda', agenda, name="agenda"),
+    path('modificarcita', modificarcita, name="modificarcita"),
+    path('modificarcitapaciente<id>', modificarcitapaciente, name="modificarcitapaciente"),  
 
 ]
