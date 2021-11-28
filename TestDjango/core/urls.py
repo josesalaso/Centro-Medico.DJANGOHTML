@@ -3,10 +3,10 @@ from .views import agenda, delagenda, index, reservarhora, registrar, iniciarses
 
 
 urlpatterns = [
-    path('', index, name="index"),
+    path('', iniciarsesion, name="iniciarsesion"),
+    path('index', index, name="index"),
     path('reservarhora', reservarhora, name="reservarhora"),
     path('registrar', registrar, name="registrar"),
-    path('iniciarsesion', iniciarsesion, name="iniciarsesion"),
     path('contacto', contacto, name="contacto"),
     path('medicos', medicos, name="medicos"),
     path('ubicaciones', ubicaciones, name="ubicaciones"),

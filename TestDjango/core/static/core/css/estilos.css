@@ -14,6 +14,19 @@ body{
     background: #152F4F;
     color:white;        
 }
+#iniciarsesionn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#registrarr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 #cajas{
     display: flex;
     align-items: center;
