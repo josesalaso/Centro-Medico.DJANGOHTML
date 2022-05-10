@@ -1,19 +1,4 @@
-header{
-    background-color: white;
-}
 
-
-
-body{
-    background-color: #f8f9fa!important;
-}
-
-
-
-#footerprincipal{
-    background: #152F4F;
-    color:white;        
-}
 #iniciarsesionn{
     display: flex;
     align-items: center;
@@ -34,16 +19,6 @@ body{
 
 }
 
-h1 {    
-    text-align: center;
-}
-
-h3{    
-    height: 80%;
-}
-h4{
-    text-align: center;
-}
 
 
 
@@ -53,5 +28,334 @@ h4{
     
     text-align: center;
 
+}
+
+/*css dabriab*/
+
+*{margin:0Px;padding:0Px}
+header, section, footer, aside, nav, article, figure
+{display: block;}
+
+/*Fondo de la pagina*/
+body {
+	background-color: #c9e0d1a1;
+    font-family:Arial, Helvetica, sans-serif ;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	overflow-x: hidden;
+	transition: .7s ease all;}
+	
+
+	body.dark{
+		background: rgb(36, 35, 35);
+		transition: .7s ease all;
+	}
+
+/*Estructura de la pagina*/
+header {background-color: #eaf5f2;}
+nav {background-color: #198064;}
+section{background-color: #ffffff3a;}
+footer{background-color: rgba(58, 25, 241, 0);}
+
+h1 {
+    background-color: rgb(63, 88, 72);
+    color: rgb(255, 255, 255);
+    height: 100%;
+	transition: .7s ease all;
+}
+
+body.dark .titulo{
+	background: #232925;
+	color: #fff;
+	transition: .7s ease all;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+}
+
+h4 {
+    color: rgb(225, 255, 255);
+}
+
+h5 {
+    color: rgb(225, 255, 255);
+}
+
+h6{
+	font-family: 'Indie Flower', cursiva;
+}
+#contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#ArtistaDestacado1{
+
+    display: inline-block;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 17%;
+    padding: 1%;
+    background: rgb(255, 254, 254);
+    border: rgb(255, 254, 254);
+}
+#ArtistaDestacado2{
+    border: rgb(65, 82, 65);
+    display: inline-block;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 17%;
+    padding: 1%;
+    background: rgb(255, 254, 254);
+}
+#artistaDestacado {
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    margin: 30px;
+}
+
+#Boton{
+    border: rgb(0, 0, 0);
+    background: rgb(143, 212, 143);
+}
+
+#FotoPerfilDestacado{
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 5px;
+}
+
+#Letras{
+    text-align: left;
+}
+
+
+
+#navbar {background-color: #490e0e83;
+    height: 100%;
+    border: 0px solid rgba(255, 255, 255, 0.658);
+    padding: 0px;
+}
+
+.pie_principal {clear: both; text-align: left; border: 1px #2c2b2b5b;
+    padding: 10px; background: rgb(63, 88, 72); color: rgb(241, 241, 241);
+    }
+#facebook, #instagram{
+    float: right;
+}
+
+body.dark .pie_principal{
+	background: #232925;
+	color: #fff;
+	transition: .7s ease all;
+}
+
+/*flip*/
+
+.col_half { width: 49%; }
+.col_third { width: 32%; }
+.col_fourth { width: 23.5%; }
+.col_fifth { width: 18.4%; }
+.col_sixth { width: 15%; }
+.col_three_fourth { width: 74.5%;}
+.col_twothird{ width: 66%;}
+.col_half,
+.col_third,
+.col_twothird,
+.col_fourth,
+.col_three_fourth,
+.col_fifth{
+	position: relative;
+	display:inline;
+	display: inline-block;
+	float: left;
+	margin-right: 2%;
+	margin-bottom: 20px;
+}
+.end { margin-right: 0 !important; }
+
+/*-=-=-=-=-=-=-=-=-=-=- */
+/* Flip Panel */
+/*-=-=-=-=-=-=-=-=-=-=- */
+
+
+.panel {
+	margin: 0 auto;
+	height: 400px;
+    width: 300px;  
+	position: relative;
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+    
+}
+
+.panel .front,
+.panel .back {
+	text-align: center;
+}
+	
+.panel .front {
+	height: inherit;
+	position: absolute;
+	top: 0;
+	z-index: 900;
+	text-align: center;
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	   -moz-transform: rotateX(0deg) rotateY(0deg);
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	-webkit-transition: all .4s ease-in-out;
+	   -moz-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+		 -o-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+}
+
+.panel .back {
+	height: inherit;
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+	-webkit-transform: rotateY(-180deg);
+	   -moz-transform: rotateY(-180deg);
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	-webkit-transition: all .4s ease-in-out;
+	   -moz-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+		 -o-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+}
+.panel.flip .front {
+	z-index: 900;
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+.panel.flip .back {
+	z-index: 1000;
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	-moz-transform: rotateX(0deg) rotateY(0deg);
+}
+.box1{
+	width: 300px;
+	height: 400px;
+	margin: 0;
+	padding: 0px;
+	border-radius: 5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.box2{
+	background-color: #29232b;
+	width: 300px;
+	height: 400px;
+	margin: 0;
+	padding: 0px;
+	border-radius: 5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+body.dark .col_third .box2{
+	background: #476451 ;
+}
+
+.container{
+    display: flex;
+}
+
+
+/*Quienes somos*/
+
+.cont {
+	height: 100;
+
+}
+.texto {
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	right: 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+ }
+
+h6 {
+font-size: block;
+font-weight: 900;
+z-index: 100;
+margin-bottom: 30px;
+color: fff;
+
+ }
+
+h6::after{
+	display: block;
+	width: 30%;
+	height: 10px;
+	content: "";
+	margin: auto;
+
+ }
+
+ /*Modo Oscuro*/
+
+.switch {
+	background: orange;
+	border-radius: 1000px;
+	border: none;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	outline: none;
+	transition: .7s ease all;
+}
+
+.switch::after{
+	content: "";
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background: #eaf5f2;
+	top: 0;
+	left: unset;
+	right: 0;
+	border-radius: 100px;
+	transition: .7s ease all;
+	box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+}
+
+.switch.active{
+	background: #343d6b;
+	color: black;
+}
+
+.switch.active::after{
+	left: 0;
+	right: unset;
+}
+
+.switch span {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	background: none;
+	color: #fff;
 }
 
