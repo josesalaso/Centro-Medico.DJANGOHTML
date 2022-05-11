@@ -1,28 +1,9 @@
-
 #iniciarsesionn{
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
-#registrarr{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-#cajas{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-
-
-
-
 
 #apiwsp{
     
@@ -38,7 +19,7 @@ header, section, footer, aside, nav, article, figure
 
 /*Fondo de la pagina*/
 body {
-	background-color: #c9e0d1a1;
+	background-color: #cdf6dda1;
     font-family:Arial, Helvetica, sans-serif ;
     text-align: center;
     background-repeat: no-repeat;
@@ -57,12 +38,6 @@ header {background-color: #eaf5f2;}
 nav {background-color: #198064;}
 section{background-color: #ffffff3a;}
 footer{background-color: rgba(58, 25, 241, 0);}
-
-label{
-	color: rgb(32, 32, 32)}
-	body.dark label{
-		color: #eaf5f2;
-	}
 
 h1 {
     background-color: rgb(63, 88, 72);
@@ -87,15 +62,23 @@ h3 {
 
 h4 {
     color: rgb(32, 32, 32);}
-	body.dark h4{
-		color: #eaf5f2;
-	}
+    body.dark h4{
+        color: #eaf5f2;
+
+    }
+
+label{
+    color: #232925;}
+    body.dark label{
+        color: #eaf5f2;
+    }
+
 
 h5 {
-    color: rgb(32, 32, 32);}
-	body.dark h5{
-		color: #eaf5f2;
-	}
+    color: rgb(0, 0, 0);}
+    body.dark h5{
+        color: #eaf5f2;
+    }
 
 h6{
 	font-family: 'Indie Flower', cursiva;
@@ -159,9 +142,6 @@ h6{
 .pie_principal {clear: both; text-align: left; border: 1px #2c2b2b5b;
     padding: 10px; background: rgb(63, 88, 72); color: rgb(241, 241, 241);
     }
-#facebook, #instagram{
-    float: right;
-}
 
 body.dark .pie_principal{
 	background: #232925;
@@ -285,10 +265,24 @@ body.dark .col_third .box2{
 
 .container{
     display: flex;
-	overflow: hidden;
-
 }
 
+
+/*Quienes somos*/
+
+.cont {
+	height: 100;
+
+}
+.texto {
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	right: 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+ }
 
 h6 {
 font-size: block;
@@ -353,18 +347,4 @@ h6::after{
 	display: block;
 	background: none;
 	color: #fff;
-}
-
-/*quien somos*/
-
-.imgqs{
-	margin: 1em;
-	float: left;
-	padding: 1%;
-}
-
-.info{
-	margin: 1em;
-	float: right;
-	padding: 1%;
 }
