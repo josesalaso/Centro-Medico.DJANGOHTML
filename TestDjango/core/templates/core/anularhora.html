@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <!-- META -->
     <meta charset="UTF-8">
@@ -14,6 +13,11 @@
     <!--CSS BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--Estilos-->
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/cb0043138a.js" crossorigin="anonymous"></script>
+    <link href = "https://fonts.googleapis.com/css2? family = Indie + Flower & display = swap" rel = "hoja de estilo">
 
     <!--CSS-->
     <link rel="Stylesheet" href="{% static 'core/css/estilos.css'%}">
@@ -32,137 +36,162 @@
 </head>
 
 <body>
-
+    
     <!--Header con Menu buscador y Demaces -->
     <div>
-        <header>
-            <title>Centro Medico Galeno - Pagina de Centro Medico Galeno</title>
-            <hr size="10px" color="black" />
-            <div class=container>
-                <form class="form-inline my-5 my-lg-2">
-                    <a class="navbar-brand" id=logo href="{% url 'index' %}"><img
-                            src="{% static 'core/img/logomedico.png'%}" height="55vw" width="55vw"></a>
-                    <h3>Centro Medico Galeno </h3>
-                    <hr>
-                    <div>
-                        <input class="form-control mr-sm-2" id=buscarpag type="search" size="45"
-                            placeholder="Buscar Medico" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <b>Cuenta</b>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'iniciarsesion' %}">Iniciar Sesion</a>
-                            <a class="dropdown-item" href="{% url 'registrar' %}">Registrar</a>
-                            <a class="dropdown-item" href="{% url 'cajeropagar' %}">Interfaz Cajero</a>
-                            <a class="dropdown-item" href="{% url 'secretaria' %}">Interfaz Secretaria</a>
-                            <a class="dropdown-item" href="{% url 'medico' %}">Interfaz Medico</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" id=menuu>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+        <div id="Contenedor">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <a class="navbar-brand" href="{% url 'index'%}">
+                <img src="{% static 'core/img/logo.png'%}" height="55vw" width="55vw">
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+      
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index'%}">Inicio <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Reservas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="" tabindex="-1" aria-disabled="true">Contactanos</a>
+                  </li>
+                </ul>
+                 <!--Boton de Modo noche--> 
+                <button class="switch" id="switch" onsubmit="return false;">
+                  <span><i class="fas fa-sun"></i></span>
+                  <span><i class="fas fa-moon"></i></span>
                 </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'index' %}"><b>Inicio</b> <span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'medicos' %}"><b>Medicos</b></a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'reservarhora' %}" tabindex="-1"
-                                aria-disabled="true"><b>Reservar
-                                    Hora</b></a>
-                        </li>
-                    </ul>
-                </div>
+                <form class="form-inline my-2 my-lg-0">
+                  <!--Buscador-->
+                  <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                  {% if user.is_authenticated%}
+                  <li>
+                    <a href="{% url 'logout' %}">Cerrar Sesion</a>
+                  </li>
+                  {% else %}
+                  <li>
+                    <a href="{% url 'login' %}">Iniciar Sesion</a>
+                  </li>  
+                  {% endif %}
+                </form>
+              </div>
             </nav>
-
         </header>
-        <hr size="10px" color="black" />
-        <h1>ANULAR HORA! X</h1>
-        <br>
-        <div class="container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Rut Medico</th>
-                        <th scope="col">Horario</th>
-                        <th scope="col">ESTADO</th>
-                        <th scope="col">ELIMINAR HORA</th>
-
-
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for ci in citas %}
-                    <tr>
-                        <td>{{ci.idagenda}}</td>
-                        <td>{{ci.run}}</td>
-                        <td>{{ci.hora}}</td>
-                        <td>{{ci.estado}}</td>
-                        <td><a href="{% url 'delhora' ci.idagenda %}">ELIMINAR HORA</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-
-            </table>
+        <!-- CARRUSEL BOOSTRAP -->
+        
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="10000">
+                        <img src="{% static 'core/img/inicia Sesion.jpg'%}" class="d-block w-100" alt="Inti Castro"
+                            width="450px" height="500px"></a>
+                </div>
+                <div class="carousel-item" data-interval="2000">
+                        <img src="{% static 'core/img/registro.jpg'%}" class="d-block w-100" alt="..."
+                            width="450px" height="500px"></a>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
 
+    </div>
+
+    <hr size="10px" color="black" />
+    <h1>ANULAR HORA! X</h1>
+    <br>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Rut Residente</th>
+                    <th scope="col">Horario</th>
+                    <th scope="col">Nombre y ESTADO</th>
+                    <th scope="col">ELIMINAR HORA</th>
 
 
-        <hr size="10px" color="black" />
-        <!--FOOTER -->
-        <footer id=footerprincipal>
-            <div class="row">
-                <div class="col-12 col-md">
+                </tr>
+            </thead>
+            <tbody>
+                {% for ci in citas %}
+                <tr>
+                    <td>{{ci.idagenda}}</td>
+                    <td>{{ci.run}}</td>
+                    <td>{{ci.hora}}</td>
+                    <td>{{ci.estado}}</td>
+                    <td><a href="{% url 'delhora' ci.idagenda %}">ELIMINAR HORA</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
 
-                    <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Contacto</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted">Telefono: +5697496769</a></li>
-                        <li><a class="text-muted">josalasolivares@gmail.com</a></li>
-                        <li><a class="text-muted">jo.salaso@duocuc.com</a></li>
-                    </ul>
-                </div>
+        </table>
+    </div>
+    <br>
 
-                <div class="col-6 col-md">
-                    <h5>Redes</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
-                        <li><a class="text-muted" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Acerca</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="{% url 'medicos' %}">Medicos</a></li>
-                        <li><a class="text-muted" href="{% url 'contacto' %}">Contacto</a></li>
-                        <li><a class="text-muted" href="{% url 'ubicaciones' %}">Ubicacion</a></li>
-                        <li><a class="text-muted">Viña del mar, V region</a></li>
-                    </ul>
-                </div>
+    <hr size="10px" color="black" />
+
+    <br>
+    <h4>Quienes Somos</h4>
+    <br>
+    <br>
+
+    
+
+
+
+    <hr size="10px" color="black" />
+    <!--FOOTER -->
+    <footer id=footerprincipal>
+        <div class="row">
+            <div class="col-12 col-md">
+
+                <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
             </div>
-        </footer>
+            <div class="col-6 col-md">
+                <h5>Contacto</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted">Telefono: +5697496769</a></li>
+                    <li><a class="text-muted">josalasolivares@gmail.com</a></li>
+                    <li><a class="text-muted">jo.salaso@duocuc.com</a></li>
+                </ul>
+            </div>
 
+            <div class="col-6 col-md">
+                <h5>Redes</h5>
+                <ul class="list-unstyled text-small">
+                    <li><img src="{% static 'core/img/insta logo.png'%}" height="10%" width="10%"><a class="text-muted" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                    <li><img src="{% static 'core/img/face logo.png'%}" height="10%" width="10%"><a class="text-muted" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Acerca</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="{% url 'medicos' %}">Administradores</a></li>
+                    <li><a class="text-muted" href="{% url 'contacto' %}">Contacto</a></li>
+                    <li><a class="text-muted" href="{% url 'ubicaciones' %}">Ubicacion</a></li>
+                    <li><a class="text-muted">Viña del mar, V region</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+<!--JS-->
+<script src="{% static 'core/js/Index.js'%}"></script>
 
 </body>
-
 </html>
