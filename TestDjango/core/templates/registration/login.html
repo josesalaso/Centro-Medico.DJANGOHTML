@@ -15,7 +15,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!--CSS-->
-    <link rel="Stylesheet" href="{% static 'core/css/inisio.css'%}">
+    <link rel="Stylesheet" href="{% static 'core/css/login.css'%}">
 
     <!--Estilos-->
     <link rel = "preconnect" href = "https://fonts.gstatic.com">
@@ -79,27 +79,20 @@
         </header>
 
         <br>
-        <h4>Inicio de Sesion</h4>
+        <h4>Utiliza Las credenciales entregadas por el administrador</h4>
         <br>
-    
-        <div class="container" id="iniciarsesionn">
-            <div class="row">
-                <form id="form-login" action="" method="post">
-                  {% csrf_token %}
-                  {{ form }}
-                  <input type="submit" value="ingresar">
-
-                    <!--<div class="form-group" id="usarname">
-                        <label class="label">Usuario</label>
-                        {{ form.username }}
-                    </div>
-                    <div class="form-group" id="password">
-                        <label for="exampleInputPassword1" class="label">Contraseña</label>
-                        {{ form.password }}
-                    </div>
-                    <button class="btn btn-primary">INICIAR SESION</button>
-                    <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar"> -->
-                </form>
+        {% load crispy_forms_tags %}
+        <div class="container">
+                <div class="card">
+                  <div class="card-body">
+                    <h4>Inicia Sesion</h4>
+                    <hr>
+                    <form id="form-login" action="" method="post">
+                      {% csrf_token %}
+                      {{ form | crispy }}
+                      <input type="submit" value="ingresar" class="btn btn-success float-right">
+                    </form>
+              </div>
             </div>
         </div>
         <br>

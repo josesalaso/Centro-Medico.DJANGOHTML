@@ -1,0 +1,213 @@
+#iniciarsesionn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#apiwsp{
+    
+    text-align: center;
+
+}
+
+/*css dabriab*/
+
+*{margin:0Px;padding:0Px}
+header, section, footer, aside, nav, article, figure
+{display: block;}
+
+/*Fondo de la pagina*/
+body {
+	background-color: #cdf6dda1;
+    font-family:Arial, Helvetica, sans-serif ;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	overflow-x: hidden;
+	transition: .7s ease all;}
+	
+
+	body.dark{
+		background: rgb(36, 35, 35);
+		transition: .7s ease all;
+	}
+
+/*Estructura de la pagina*/
+header {background-color: #eaf5f2;}
+nav {background-color: #198064;}
+section{background-color: #ffffff3a;}
+footer{background-color: rgba(58, 25, 241, 0);}
+
+h1 {
+    background-color: rgb(63, 88, 72);
+    color: rgb(255, 255, 255);
+    height: 100%;
+	transition: .7s ease all;
+}
+
+body.dark .titulo{
+	background: #232925;
+	color: #fff;
+	transition: .7s ease all;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+}
+
+h4 {
+    color: rgb(32, 32, 32);}
+    body.dark h4{
+        color: #eaf5f2;
+
+    }
+
+label{
+    color: #232925;}
+    body.dark label{
+        color: #eaf5f2;
+    }
+
+
+h5 {
+    color: rgb(0, 0, 0);}
+    body.dark h5{
+        color: #eaf5f2;
+    }
+
+h6{
+	font-family: 'Indie Flower', cursiva;
+}
+#contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+#Boton{
+    border: rgb(0, 0, 0);
+    background: rgb(143, 212, 143);
+}
+
+#FotoPerfilDestacado{
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 5px;
+}
+
+#Letras{
+    text-align: left;
+}
+
+
+
+#navbar {background-color: #490e0e83;
+    height: 100%;
+    border: 0px solid rgba(255, 255, 255, 0.658);
+    padding: 0px;
+}
+
+.pie_principal {clear: both; text-align: left; border: 1px #2c2b2b5b;
+    padding: 10px; background: rgb(63, 88, 72); color: rgb(241, 241, 241);
+    }
+
+body.dark .pie_principal{
+	background: #232925;
+	color: #fff;
+	transition: .7s ease all;
+}
+
+
+/*Quienes somos*/
+
+.cont {
+	height: 100;
+
+}
+.texto {
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	right: 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+ }
+
+h6 {
+font-size: block;
+font-weight: 900;
+z-index: 100;
+margin-bottom: 30px;
+color: fff;
+
+ }
+
+h6::after{
+	display: block;
+	width: 30%;
+	height: 10px;
+	content: "";
+	margin: auto;
+
+ }
+
+ /*Modo Oscuro*/
+
+.switch {
+	background: orange;
+	border-radius: 1000px;
+	border: none;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	outline: none;
+	transition: .7s ease all;
+}
+
+.switch::after{
+	content: "";
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background: #eaf5f2;
+	top: 0;
+	left: unset;
+	right: 0;
+	border-radius: 100px;
+	transition: .7s ease all;
+	box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+}
+
+.switch.active{
+	background: #343d6b;
+	color: black;
+}
+
+.switch.active::after{
+	left: 0;
+	right: unset;
+}
+
+.switch span {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	background: none;
+	color: #fff;
+}
+
+.card-body{
+    background-color: #cdf6dda1;}
+    body.dark .card-body{
+        background-color: #212529;
+    }
