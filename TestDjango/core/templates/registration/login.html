@@ -84,10 +84,6 @@
     
         <div class="container" id="iniciarsesionn">
             <div class="row">
-                {% if form.errors %}
-                  <div class="alert alert-danger"><label>tu usuario y contraseña no coinciden</label></div>
-                  </div>
-                {% endif %}  
                 <form id="form-login" action="" method="post">
                   {% csrf_token %}
                   {{ form }}
