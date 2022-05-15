@@ -121,12 +121,12 @@
                 </tr>
             </thead>
             <tbody>
-                {% for pa in pago %}
+                {% for ga in gastocomun %}
                 <tr>
-                    <td>{{pa.idpago}}</td>
-                    <td>{{pa.run}}</td>
-                    <td>{{pa.nombrecliente}}</td>
-                    <td>{{pa.precio}}</td>
+                    <td>{{ga.idgastocomun}}</td>
+                    <td>{{ga.mes}}</td>
+                    <td>{{ga.nombreresidente}}</td>
+                    <td>{{ga.precio}}</td>
                     <td><a href="{% url 'index'  %}">VOLVER</a></td>
                 </tr>
                 {% endfor %}

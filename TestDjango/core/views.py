@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Agenda, Citas, Pago
-from .forms import AgendaForm, CitasForm, PagoForm
+from .models import Espacio, Citas, Gastocomun
+from .forms import EspacioForm, CitasForm, GastocomunForm
 # Create your views here.
 
 def index(request):
@@ -15,10 +15,10 @@ def interfazconcerje(request):
 def reservarhora(request):
     # accediendo al objeto que contiene los datos de la base de datos
     # el metodo all traera todas las horas que estan en la tabla
-    agenda = Agenda.objects.all()
+    espacio = Espacio.objects.all()
     # ahora crearemos una variable que le pase los datos del producto al template
     datos = {
-        'agenda': agenda
+        'espacio': espacio
     }
     # ahora lo agregamos para que se envie al templateee
     return render(request, 'core/reservarhora.html', datos)
@@ -29,20 +29,20 @@ def confirmarhora(request):
     if request.method == 'POST':
         # con request recuperamos los datos del formulario
         formulario = CitasForm(request.POST)
-        idagenda=request.POST.get("idagenda")
+        idespacio=request.POST.get("idespacio")
         # validamos el formulario
         if formulario.is_valid:
-            if not validaAgenda(idagenda):
+            if not validaEspacio(idespacio):
                 # guardamos en la base de datos
                 formulario.save()
                 # y mostramos un mensaje
                 datos['mensaje'] = "Hora Reservada correctamente"
             else:
-                datos['mensaje']="Ya existe un registro asociado a ese codigo "    + idagenda  
+                datos['mensaje']="Ya existe un registro asociado a ese codigo "    + idespacio  
     return render(request, 'core/confirmarhora.html', datos)
 
-def validaAgenda(idagenda):
-    existe=Agenda.objects.filter(idagenda=idagenda).exists()
+def validaEspacio(idespacio):
+    existe=Espacio.objects.filter(idespacio=idespacio).exists()
     return existe
 
 def pagaranularhora(request):
@@ -59,7 +59,7 @@ def pagaranularhora(request):
 def delhora(request,id):
     #el id es el identificador de la tabla productos
     #buscando los datos en la base de datos
-    citas=Citas.objects.get(idagenda=id)
+    citas=Citas.objects.get(idespacio=id)
     #eliminamos el producto del id buscado
     citas.delete()
     #ahora redirigmos a la pagina con el listado
@@ -67,35 +67,35 @@ def delhora(request,id):
 
 def agregargastocomunmensual(request):
     # el view sera el responsable de entregar el form al template
-    datos = {'form': PagoForm}
+    datos = {'form': GastocomunForm}
     # verificamos que peticion sean post y rescatamos los datos
     if request.method == 'POST':
         # con request recuperamos los datos del formulario
-        formulario = PagoForm(request.POST)
-        idpago=request.POST.get("idpago")
+        formulario = GastocomunForm(request.POST)
+        idgastocomun=request.POST.get("idgastocomun")
         # validamos el formulario
         if formulario.is_valid:
-            if not validaPago(idpago):
+            if not validaGastocomun(idgastocomun):
                 # guardamos en la base de datos
                 formulario.save()
                 # y mostramos un mensaje
                 datos['mensaje'] = "AGREGADO correctamente correctamente"
             else:
-                datos['mensaje']="Ya existe un registro asociado a ese codigo "    + idpago  
+                datos['mensaje']="Ya existe un registro asociado a ese codigo "    + idgastocomun  
     return render(request, 'core/agregargastocomunmensual.html', datos)
 
-def validaPago(idpago):
-    existe=Pago.objects.filter(idpago=idpago).exists()
+def validaGastocomun(idgastocomun):
+    existe=Gastocomun.objects.filter(idgastocomun=idgastocomun).exists()
     return existe
 
 
 def gastocomun(request):
     # accediendo al objeto que contiene los datos de la base de datos
     # el metodo all traera todas las horas que estan en la tabla
-    pago = Pago.objects.all()
+    gastocomun = Gastocomun.objects.all()
     # ahora crearemos una variable que le pase los datos del producto al template
     datos = {
-        'pago': pago
+        'gastocomun': gastocomun
     }
     # ahora lo agregamos para que se envie al templateee
     return render(request, 'core/gastocomun.html', datos)
@@ -104,21 +104,21 @@ def gastocomun(request):
 
 def agregarespacio(request):
     # el view sera el responsable de entregar el form al template
-    datos = {'form': AgendaForm}
+    datos = {'form': EspacioForm}
     # verificamos que peticion sean post y rescatamos los datos
     if request.method == 'POST':
         # con request recuperamos los datos del formulario
-        formulario = AgendaForm(request.POST)
-        idagenda=request.POST.get("idagenda")
+        formulario = EspacioForm(request.POST)
+        idespacio=request.POST.get("idespacio")
         # validamos el formulario
         if formulario.is_valid:
-            if not validaAgenda(idagenda):
+            if not validaEspacio(idespacio):
                 # guardamos en la base de datos
                 formulario.save()
                 # y mostramos un mensaje
                 datos['mensaje'] = "Guardado correctamente"
             else:
-                datos['mensaje']="Ya existe un registro asociado a ese codigo"    + idagenda  
+                datos['mensaje']="Ya existe un registro asociado a ese codigo"    + idespacio  
     return render(request, 'core/agregarespacio.html', datos)
 
 
