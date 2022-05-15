@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
@@ -108,31 +107,35 @@
     </div>
 
     <hr size="10px" color="black" />
-    <h1>USUARIO ADMINISTRADOR CONDOMINIO</h1>
+    <h1>GASTO COMUN MENSUAL</h1>
     <br>
-    <div class="container" id=cajas>
-        <div class="card">
-           
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id Pago</th>
+                    <th scope="col">MES</th>
+                    <th scope="col">RESIDENTE GASTO COMUN</th>
+                    <th scope="col">Precio $</th>
+                    <th scope="col">VOLVER</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pa in pago %}
+                <tr>
+                    <td>{{pa.idpago}}</td>
+                    <td>{{pa.run}}</td>
+                    <td>{{pa.nombrecliente}}</td>
+                    <td>{{pa.precio}}</td>
+                    <td><a href="{% url 'index'  %}">VOLVER</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
 
-            <div class="card-body">
-                <h5 class="card-title">CONSULTAR GASTO COMUN MENSUAL</h5>
-                <a href="{% url 'comprobantepago' %}" class="btn btn-primary">IR</a>
-            </div>
-        </div>
-        <div class="card">
-
-            <div class="card-body">
-                <h5 class="card-title">AGREGAR GASTO COMUN MENSUAL</h5>
-                <a href="{% url 'cajeropagar' %}" class="btn btn-primary">IR</a>
-            </div>
-        </div>
-        <div class="card">
-
-            <div class="card-body">
-                <h5 class="card-title">CONSULTAR/RESERVAR ESPACIOS CONDOMINIO</h5>
-                <a href="{% url 'reservarhora' %}" class="btn btn-primary">IR</a>
-            </div>
-        </div>
+        </table>
+    </div>
+    <div>
+        <a href="https://mpago.la/2R1ZPs7" class="btn btn-primary">PAGAR AQUI</a>
     </div>
     <br>
 
@@ -174,9 +177,9 @@
             <div class="col-6 col-md">
                 <h5>Acerca</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="{% url 'medicos' %}">Administradores</a></li>
-                    <li><a class="text-muted" href="{% url 'contacto' %}">Contacto</a></li>
-                    <li><a class="text-muted" href="{% url 'ubicaciones' %}">Ubicacion</a></li>
+                    <li><a class="text-muted" href="">Administradores</a></li>
+                    <li><a class="text-muted" href="">Contacto</a></li>
+                    <li><a class="text-muted" href="">Ubicacion</a></li>
                     <li><a class="text-muted">Viña del mar, V region</a></li>
                 </ul>
             </div>

@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
@@ -107,28 +108,27 @@
     </div>
 
     <hr size="10px" color="black" />
-
-    <h1>AGREGAR ESPACIO CONDOMINIO</h1>
+    <h1>USUARIO CONCERJE</h1>
     <br>
-    <div class="container">
-        <div class="row">
-            <form method="post" action="" id="formulario">
-                {% csrf_token %}
-                <div class="row">
-                    {{form.as_table}}
-                </div>
-                <br>
-                <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
-                <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
-                <a href="{% url 'medico' %}" class="btn btn-danger">INICIO</a>
-
-                <div class="alert alert-success" role="alert" id="succes">
-                    {{mensaje}}
-                </div>
-            </form>
+    <div class="container" id=cajas>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">CONSULTAR GASTO COMUN MENSUAL</h5>
+                <a href="{% url 'gastocomun' %}" class="btn btn-primary">IR</a>
+            </div>
         </div>
-        <br>
-
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">AGREGAR ESPACIO CONDOMINIO</h5>
+                <a href="{% url 'agregarespacio' %}" class="btn btn-primary">IR</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">CONSULTAR/RESERVAR ESPACIOS CONDOMINIO</h5>
+                <a href="{% url 'reservarhora' %}" class="btn btn-primary">IR</a>
+            </div>
+        </div>
     </div>
     <br>
 
@@ -170,9 +170,9 @@
             <div class="col-6 col-md">
                 <h5>Acerca</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="{% url 'medicos' %}">Administradores</a></li>
-                    <li><a class="text-muted" href="{% url 'contacto' %}">Contacto</a></li>
-                    <li><a class="text-muted" href="{% url 'ubicaciones' %}">Ubicacion</a></li>
+                    <li><a class="text-muted" href="">Administradores</a></li>
+                    <li><a class="text-muted" href="">Contacto</a></li>
+                    <li><a class="text-muted" href="">Ubicacion</a></li>
                     <li><a class="text-muted">Viña del mar, V region</a></li>
                 </ul>
             </div>
