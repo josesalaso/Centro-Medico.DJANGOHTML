@@ -81,6 +81,7 @@
               </div>
             </nav>
         </header>
+<<<<<<< HEAD
         <!-- CARRUSEL BOOSTRAP -->
         
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
@@ -92,6 +93,28 @@
                 <div class="carousel-item" data-interval="2000">
                         <img src="{% static 'core/img/registro.jpg'%}" class="d-block w-100" alt="..."
                             width="450px" height="500px"></a>
+=======
+
+        <h1>CONFIMAR HORA Y DATOS</h1>
+        <br>
+        <div class="container">
+            <div class="row">
+                <form method="post" action="" id="formulario">
+                    {% csrf_token %}
+                    <div class="row">
+                        {{form.as_table}}
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-danger" id="enviar" value="Confirmar Hora">
+                    <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+
+                </form>
+            </div>
+            <br>
+            <div class="row">
+                <div class="alert alert-success" role="alert" id="succes">
+                    {{mensaje}}
+>>>>>>> parent of 481cf92 (ultimos detalles)
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">

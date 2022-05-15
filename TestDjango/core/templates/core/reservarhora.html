@@ -81,6 +81,7 @@
               </div>
             </nav>
         </header>
+<<<<<<< HEAD
         <!-- CARRUSEL BOOSTRAP -->
         
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
@@ -102,6 +103,37 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
+=======
+
+        <h1>RESERVA DE HORA</h1>
+        <br>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Rut Medico</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Especialidad</th>
+                        <th scope="col">Tomar Hora</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ag in agenda %}
+                    <tr>
+                        <td>{{ag.idagenda}}</td>
+                        <td>{{ag.run}}</td>
+                        <td>{{ag.hora}}</td>
+                        <td>{{ag.medicoespecialidad}}</td>
+                        <td><a href="{% url 'confirmarhora'  %}">Tomar Hora</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+>>>>>>> parent of 481cf92 (ultimos detalles)
         </div>
 
     </div>
