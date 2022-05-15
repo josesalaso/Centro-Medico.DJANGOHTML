@@ -112,7 +112,7 @@
     </div>
 
     
-    <h1>Reservas</h1>
+    <h1>RESERVA ESPACIOS Y GASTOS COMUN</h1>
     <br>
     <div class="container">
         <!--Box1-->
@@ -120,7 +120,6 @@
           <div class="hover panel">
             <div class="front">
               <div class="box1">
-                <a href="PerfilKrishna.html">
                 <img src="{% static 'core/img/reserva.jpg'%}" height="400px" width="300px">
                 </a>  
               </div>
@@ -135,7 +134,6 @@
                 <a href="{% url 'reservarhora' %}" class="btn btn-primary">Reserva Aqui</a>
                 <br>
                 <br>
-                <button type="button" class="btn btn-light">Mas informacion</button>
               </div>
             </div>
           </div>
@@ -155,10 +153,13 @@
               <br>
               <h2>Gastos Comunes</h2>
               <br>
-              <button type="button" class="btn btn-success">Paga aqui</button>
               <br>
               <br>
-              <button type="button" class="btn btn-light">Mas informacion</button>
+              <br>
+              <br>      
+              <a href="{% url 'comprobantepago' %}" class="btn btn-primary">VER Y PAGAR</a>
+              <br>
+              <br>
             </div>
           </div>
         </div> 
@@ -176,14 +177,13 @@
           <div class="back">
             <div class="box2">
                 <br>  
-                <h2>VER RESERVAS</h2>
+                <h2>PAGAR O ELIMINAR</h2>
                 <br>
                 <br>
                 <br>
                 <a href="{% url 'anularhora' %}" class="btn btn-primary">Reserva Aqui</a>
                 <br>
                 <br>
-                <button type="button" class="btn btn-light">Mas informacion</button>
             </div>
           </div>
         </div> 
@@ -194,8 +194,11 @@
 
     <hr size="10px" color="black" />
 
+    <h4>ALGUN PROBLEMA?CONTACTA AL ADMINISTRADOR VIA WHATSAPP [API WHATSAPP]</h4>
     <br>
-    <h4>Quienes Somos</h4>
+    <div class="container" id=apiwsp>
+        <h4><a href="https://api.whatsapp.com/send?phone=56974967679&text=hola,%20ayuda%20por%20favor"><b>CONTACTE POR AYUDA AQUI AHORA</b></a></h4>
+    </div>
     <br>
     <br>
 

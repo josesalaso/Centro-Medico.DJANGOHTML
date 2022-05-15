@@ -25,6 +25,7 @@
 
 
 #apiwsp{
+	align-items: center;
     
     text-align: center;
 
@@ -65,6 +66,7 @@ label{
 	}
 
 h1 {
+	align-items: center;
     background-color: rgb(63, 88, 72);
     color: rgb(255, 255, 255);
     height: 100%;
@@ -78,20 +80,24 @@ body.dark .titulo{
 }
 
 h2 {
+	align-items: center;
     color: rgb(255, 255, 255);
 }
 
 h3 {
+	align-items: center;
     color: rgb(255, 255, 255);
 }
 
 h4 {
+	align-items: center;
     color: rgb(32, 32, 32);}
 	body.dark h4{
 		color: #eaf5f2;
 	}
 
 h5 {
+	align-items: center;
     color: rgb(32, 32, 32);}
 	body.dark h5{
 		color: #eaf5f2;
