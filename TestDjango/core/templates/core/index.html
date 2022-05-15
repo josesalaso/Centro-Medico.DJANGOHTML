@@ -1,151 +1,162 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <!-- META -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,
+  <!-- META -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,
     maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="Pagina de ventas de articulos de pinturas online">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="keyword" content="Vender,Venta,Pinturas,Vender Online,Comprar Online,Todo medio de pagos" />
+  <meta name="description" content="Pagina de ventas de articulos de pinturas online">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="keyword" content="Vender,Venta,Pinturas,Vender Online,Comprar Online,Todo medio de pagos" />
 
-    <!--CSS BOOTSTRAP-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--CSS BOOTSTRAP-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!--Estilos-->
-    <link rel = "preconnect" href = "https://fonts.gstatic.com">
-    <script src="https://kit.fontawesome.com/cb0043138a.js" crossorigin="anonymous"></script>
-    <link href = "https://fonts.googleapis.com/css2? family = Indie + Flower & display = swap" rel = "hoja de estilo">
+  <!--Estilos-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <script src="https://kit.fontawesome.com/cb0043138a.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2? family = Indie + Flower & display = swap" rel="hoja de estilo">
 
-    <!--CSS-->
-    <link rel="Stylesheet" href="{% static 'core/css/estilos.css'%}">
+  <!--CSS-->
+  <link rel="Stylesheet" href="{% static 'core/css/estilos.css'%}">
 
-    <!-- BOOTRSTRAP JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+  <!-- BOOTRSTRAP JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-    
-    <!--Header con Menu buscador y Demaces -->
-    <div>
-        <div id="Contenedor">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-              <a class="navbar-brand" href="{% url 'index'%}">
-                <img src="{% static 'core/img/logo.png'%}" height="55vw" width="55vw">
-              </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-      
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'index'%}">Inicio <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Reservas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="" tabindex="-1" aria-disabled="true">Contactanos</a>
-                  </li>
-                </ul>
-                 <!--Boton de Modo noche--> 
-                <button class="switch" id="switch" onsubmit="return false;">
-                  <span><i class="fas fa-sun"></i></span>
-                  <span><i class="fas fa-moon"></i></span>
-                </button>
-                <form class="form-inline my-2 my-lg-0">
-                  <!--Buscador-->
-                  <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                  {% if user.is_authenticated%}
-                  <li>
-                    <a href="{% url 'logout' %}">Cerrar Sesion</a>
-                  </li>
-                  {% else %}
-                  <li>
-                    <a href="{% url 'login' %}">Iniciar Sesion</a>
-                  </li>  
-                  {% endif %}
-                </form>
-              </div>
-            </nav>
-        </header>
-        <!-- CARRUSEL BOOSTRAP -->
-        
-        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-interval="10000">
-                        <img src="{% static 'core/img/inicia Sesion.jpg'%}" class="d-block w-100" alt="Inti Castro"
-                            width="450px" height="500px"></a>
-                </div>
-                <div class="carousel-item" data-interval="2000">
-                        <img src="{% static 'core/img/registro.jpg'%}" class="d-block w-100" alt="..."
-                            width="450px" height="500px"></a>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+
+  <!--Header con Menu buscador y Demaces -->
+  <div>
+    <div id="Contenedor">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'index'%}">
+          <img src="{% static 'core/img/logo.png'%}" height="55vw" width="55vw">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <b>INTERFACES</b>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'secretaria' %}">Interfaz ADMINISTRADOR CONDOMINIO</a>
+            <a class="dropdown-item" href="{% url 'medico' %}">Interfaz CONCERJE</a>
+            <a class="dropdown-item" href="{% url 'interfazdirectiva' %}">Interfaz DIRECTIVA</a>
+          </div>
         </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index'%}">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="" tabindex="-1" aria-disabled="true">Contactanos</a>
+            </li>
+          </ul>
+          <!--Boton de Modo noche-->
+          <button class="switch" id="switch" onsubmit="return false;">
+            <span><i class="fas fa-sun"></i></span>
+            <span><i class="fas fa-moon"></i></span>
+          </button>
+          <form class="form-inline my-2 my-lg-0">
+            <!--Buscador-->
+            <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            {% if user.is_authenticated%}
+            <li>
+              <a href="{% url 'logout' %}">Cerrar Sesion</a>
+            </li>
+            {% else %}
+            <li>
+              <a href="{% url 'login' %}">Iniciar Sesion</a>
+            </li>
+            {% endif %}
+          </form>
+        </div>
+      </nav>
+      </header>
+      <!-- CARRUSEL BOOSTRAP -->
+
+      <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="10000">
+            <img src="{% static 'core/img/inicia Sesion.jpg'%}" class="d-block w-100" alt="Inti Castro" width="450px"
+              height="500px"></a>
+          </div>
+          <div class="carousel-item" data-interval="2000">
+            <img src="{% static 'core/img/registro.jpg'%}" class="d-block w-100" alt="..." width="450px"
+              height="500px"></a>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
 
     </div>
 
-    
+    <h1>USUARIO RESIDENTE</h1>
     <h1>RESERVA ESPACIOS Y GASTOS COMUN</h1>
     <br>
     <div class="container">
-        <!--Box1-->
-        <div class="col_third">
-          <div class="hover panel">
-            <div class="front">
-              <div class="box1">
-                <img src="{% static 'core/img/reserva.jpg'%}" height="400px" width="300px">
-                </a>  
-              </div>
-            </div>
-            <div class="back">
-              <div class="box2">
-                <br>
-                <h2>RESERVAR ESPACIOS</h2>
-                <br>
-                <br>
-                <br>
-                <a href="{% url 'reservarhora' %}" class="btn btn-primary">Reserva Aqui</a>
-                <br>
-                <br>
-              </div>
+      <!--Box1-->
+      <div class="col_third">
+        <div class="hover panel">
+          <div class="front">
+            <div class="box1">
+              <img src="{% static 'core/img/reserva.jpg'%}" height="400px" width="300px">
+              </a>
             </div>
           </div>
-       </div>
-       <!--box2-->
-       <div class="col_third">
+          <div class="back">
+            <div class="box2">
+              <br>
+              <h2>RESERVAR ESPACIOS</h2>
+              <br>
+              <br>
+              <br>
+              <a href="{% url 'reservarhora' %}" class="btn btn-primary">Reserva Aqui</a>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--box2-->
+      <div class="col_third">
         <div class="hover panel">
           <div class="front">
             <div class="box1">
               <a href="">
-              <img src="{% static 'core/img/evento.jpg'%}" height="400px" width="300px">
-              </a>  
+                <img src="{% static 'core/img/evento.jpg'%}" height="400px" width="300px">
+              </a>
             </div>
           </div>
           <div class="back">
@@ -156,13 +167,13 @@
               <br>
               <br>
               <br>
-              <br>      
+              <br>
               <a href="{% url 'comprobantepago' %}" class="btn btn-primary">VER Y PAGAR</a>
               <br>
               <br>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
       <!--Box3-->
       <div class="col_third">
@@ -170,25 +181,25 @@
           <div class="front">
             <div class="box1">
               <a href="">
-              <img src="{% static 'core/img/quincho.jpg'%}" height="400px" width="300px">
-              </a>  
+                <img src="{% static 'core/img/quincho.jpg'%}" height="400px" width="300px">
+              </a>
             </div>
           </div>
           <div class="back">
             <div class="box2">
-                <br>  
-                <h2>PAGAR O ELIMINAR</h2>
-                <br>
-                <br>
-                <br>
-                <a href="{% url 'anularhora' %}" class="btn btn-primary">Reserva Aqui</a>
-                <br>
-                <br>
+              <br>
+              <h2>PAGAR RESERVA O ELIMINAR</h2>
+              <br>
+              <br>
+              <br>
+              <a href="{% url 'anularhora' %}" class="btn btn-primary">Reserva Aqui</a>
+              <br>
+              <br>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
-      </div>
+    </div>
 
     <br>
 
@@ -197,53 +208,57 @@
     <h4>ALGUN PROBLEMA?CONTACTA AL ADMINISTRADOR VIA WHATSAPP [API WHATSAPP]</h4>
     <br>
     <div class="container" id=apiwsp>
-        <h4><a href="https://api.whatsapp.com/send?phone=56974967679&text=hola,%20ayuda%20por%20favor"><b>CONTACTE POR AYUDA AQUI AHORA</b></a></h4>
+      <h4><a href="https://api.whatsapp.com/send?phone=56974967679&text=hola,%20ayuda%20por%20favor"><b>CONTACTE POR
+            AYUDA AQUI AHORA</b></a></h4>
     </div>
     <br>
     <br>
 
-    
+
 
 
 
     <hr size="10px" color="black" />
     <!--FOOTER -->
     <footer id=footerprincipal>
-        <div class="row">
-            <div class="col-12 col-md">
+      <div class="row">
+        <div class="col-12 col-md">
 
-                <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Contacto</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted">Telefono: +5697496769</a></li>
-                    <li><a class="text-muted">josalasolivares@gmail.com</a></li>
-                    <li><a class="text-muted">jo.salaso@duocuc.com</a></li>
-                </ul>
-            </div>
-
-            <div class="col-6 col-md">
-                <h5>Redes</h5>
-                <ul class="list-unstyled text-small">
-                    <li><img src="{% static 'core/img/insta logo.png'%}" height="10%" width="10%"><a class="text-muted" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
-                    <li><img src="{% static 'core/img/face logo.png'%}" height="10%" width="10%"><a class="text-muted" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Acerca</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="{% url 'medicos' %}">Administradores</a></li>
-                    <li><a class="text-muted" href="{% url 'contacto' %}">Contacto</a></li>
-                    <li><a class="text-muted" href="{% url 'ubicaciones' %}">Ubicacion</a></li>
-                    <li><a class="text-muted">Viña del mar, V region</a></li>
-                </ul>
-            </div>
+          <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
         </div>
+        <div class="col-6 col-md">
+          <h5>Contacto</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted">Telefono: +5697496769</a></li>
+            <li><a class="text-muted">josalasolivares@gmail.com</a></li>
+            <li><a class="text-muted">jo.salaso@duocuc.com</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md">
+          <h5>Redes</h5>
+          <ul class="list-unstyled text-small">
+            <li><img src="{% static 'core/img/insta logo.png'%}" height="10%" width="10%"><a class="text-muted"
+                href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+            <li><img src="{% static 'core/img/face logo.png'%}" height="10%" width="10%"><a class="text-muted"
+                href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Acerca</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="{% url 'medicos' %}">Administradores</a></li>
+            <li><a class="text-muted" href="{% url 'contacto' %}">Contacto</a></li>
+            <li><a class="text-muted" href="{% url 'ubicaciones' %}">Ubicacion</a></li>
+            <li><a class="text-muted">Viña del mar, V region</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
 
-<!--JS-->
-<script src="{% static 'core/js/Index.js'%}"></script>
+    <!--JS-->
+    <script src="{% static 'core/js/Index.js'%}"></script>
 
 </body>
+
 </html>
