@@ -158,12 +158,12 @@
                 </tr>
             </thead>
             <tbody>
-                {% for es in espacio %}
+                {% for ag in agenda %}
                 <tr>
-                    <td>{{es.idespacio}}</td>
-                    <td>{{es.pago}}</td>
-                    <td>{{es.horario}}</td>
-                    <td>{{es.tipoespacio}}</td>
+                    <td>{{ag.idagenda}}</td>
+                    <td>{{ag.run}}</td>
+                    <td>{{ag.hora}}</td>
+                    <td>{{ag.medicoespecialidad}}</td>
                     <td><a href="{% url 'confirmarhora'  %}">Tomar Hora</a></td>
                 </tr>
                 {% endfor %}

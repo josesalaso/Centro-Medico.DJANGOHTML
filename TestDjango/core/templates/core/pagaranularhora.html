@@ -125,11 +125,11 @@
             <tbody>
                 {% for ci in citas %}
                 <tr>
-                    <td>{{ci.idespacio}}</td>
+                    <td>{{ci.idagenda}}</td>
                     <td>{{ci.run}}</td>
                     <td>{{ci.hora}}</td>
                     <td>{{ci.estado}}</td>
-                    <td><a href="{% url 'delhora' ci.idespacio %}">ELIMINAR HORA</a></td>
+                    <td><a href="{% url 'delhora' ci.idagenda %}">ELIMINAR HORA</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

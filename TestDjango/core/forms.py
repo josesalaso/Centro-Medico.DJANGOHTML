@@ -1,26 +1,27 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Espacio
+from .models import Usuario
+from .models import Agenda
 from .models import Citas
-from .models import Gastocomun
+from .models import Pago
 
 
 
 class CitasForm(ModelForm):
     class Meta:
         model = Citas
-        fields =["idespacio", "run", "hora", "estado"]
+        fields =["idagenda", "run", "hora", "estado"]
         
-class GastocomunForm(ModelForm):
+class PagoForm(ModelForm):
     class Meta:
-        model = Gastocomun
-        fields =["idgastocomun", "mes", "nombreresidente", "precio"]    
+        model = Pago
+        fields =["idpago", "run", "nombrecliente", "precio"]    
         
         
         
-class EspacioForm(ModelForm):
+class AgendaForm(ModelForm):
     class Meta:
-        model = Espacio
-        fields =["idespacio", "pago", "horario", "tipoespacio"]  
+        model = Agenda
+        fields =["idagenda", "hora", "medicoespecialidad", "run"]  
         
                   
