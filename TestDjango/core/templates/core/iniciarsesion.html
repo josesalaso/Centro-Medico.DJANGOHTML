@@ -65,7 +65,7 @@
                   </li>
                 </ul>
                  <!--Boton de Modo noche--> 
-                <button class="switch" id="switch" onsubmit=" false;">
+                <button class="switch" id="switch" onsubmit="return false;">
                   <span><i class="fas fa-sun"></i></span>
                   <span><i class="fas fa-moon"></i></span>
                 </button>
@@ -84,25 +84,17 @@
     
         <div class="container" id="iniciarsesionn">
             <div class="row">
-                {% if form.errors %}
-                  <div class="alert alert-danger"><label>tu usuario y contraseña no coinciden</label></div>
-                  </div>
-                {% endif %}  
-                <form id="form-login" action="" method="post">
-                  {% csrf_token %}
-                  {{ form }}
-                  <input type="submit" value="ingresar">
-
-                    <!--<div class="form-group" id="usarname">
+                <form id="iniciarsesion" action="{% url 'index' %}" method="post">
+                    <div class="form-group">
                         <label class="label">Usuario</label>
-                        {{ form.username }}
+                        <input type="text" required class="form-control">
                     </div>
-                    <div class="form-group" id="password">
+                    <div class="form-group">
                         <label for="exampleInputPassword1" class="label">Contraseña</label>
-                        {{ form.password }}
+                        <input type="password" required class="form-control" id="password">
                     </div>
-                    <button class="btn btn-primary">INICIAR SESION</button>
-                    <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar"> -->
+                    <a href="{% url 'index' %}" class="btn btn-primary">INICIAR SESION</a>
+                    <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
                 </form>
             </div>
         </div>
