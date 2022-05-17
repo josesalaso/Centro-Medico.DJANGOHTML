@@ -17,8 +17,6 @@ def ubicaciones(request):
     return render(request, 'core/ubicaciones.html')
 def secretaria(request):
     return render(request, 'core/secretaria.html')
-def interfazdirectiva(request):
-    return render(request, 'core/interfazdirectiva.html')
 def medico(request):
     return render(request, 'core/medico.html')
 
@@ -89,7 +87,7 @@ def cajeropagar(request):
                 # guardamos en la base de datos
                 formulario.save()
                 # y mostramos un mensaje
-                datos['mensaje'] = "AGREGADO correctamente correctamente"
+                datos['mensaje'] = "Pagado correctamente correctamente"
             else:
                 datos['mensaje']="Ya existe un registro asociado a ese codigo "    + idpago  
     return render(request, 'core/cajeropagar.html', datos)

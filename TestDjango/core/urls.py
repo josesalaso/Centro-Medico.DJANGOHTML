@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import agenda, delagenda, index, reservarhora, registrar, contacto, medicos, ubicaciones, anularhora, confirmarhora, delhora, cajeropagar, comprobantepago, secretaria, modificaragendamedico, medico, agregaragenda, modificarcita, modificarcitapaciente, interfazdirectiva
+from .views import agenda, delagenda, index, reservarhora, registrar, contacto, medicos, ubicaciones, anularhora, confirmarhora, delhora, cajeropagar, comprobantepago, secretaria, modificaragendamedico, medico, agregaragenda, modificarcita, modificarcitapaciente
 
 
 urlpatterns = [
     path('', index, name="index"),
     path('reservarhora', reservarhora, name="reservarhora"),
+    path('registrar', registrar, name="registrar"),
     path('contacto', contacto, name="contacto"),
     path('medicos', medicos, name="medicos"),
     path('ubicaciones', ubicaciones, name="ubicaciones"),
@@ -22,6 +23,5 @@ urlpatterns = [
     path('agenda', agenda, name="agenda"),
     path('modificarcita', modificarcita, name="modificarcita"),
     path('modificarcitapaciente<id>', modificarcitapaciente, name="modificarcitapaciente"), 
-    path('interfazdirectiva', interfazdirectiva, name="interfazdirectiva"),
 
 ]

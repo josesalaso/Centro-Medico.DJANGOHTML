@@ -13,10 +13,10 @@ class Usuario(models.Model):
     
 #MODELO AGENDA_MEDICO
 class Agenda(models.Model):
-    idagenda=models.IntegerField(primary_key=True, verbose_name='ESPACIO ID')
-    hora=models.CharField(max_length=50, verbose_name='Pago $')
-    medicoespecialidad=models.CharField(null=True, max_length=50, verbose_name='HORARIO DIA/HORA')
-    run=models.CharField(max_length=10, verbose_name='ESPACIO')
+    idagenda=models.IntegerField(primary_key=True, verbose_name='Id Agenda')
+    hora=models.CharField(max_length=50, verbose_name='Hora')
+    medicoespecialidad=models.CharField(null=True, max_length=50, verbose_name='Medico y especialidad')
+    run=models.CharField(max_length=10, verbose_name='Rut Medico')
     
     def __str__(self):
         return self.idagenda 
@@ -33,10 +33,10 @@ class Citas(models.Model):
     
 #MODELO PAGO
 class Pago(models.Model):
-    idpago=models.IntegerField(primary_key=True, verbose_name='GASTO COMUN ID')
-    run=models.CharField(max_length=10, verbose_name='MES') 
-    nombrecliente=models.CharField(max_length=50, verbose_name='RESIDENTE') 
-    precio=models.IntegerField(verbose_name='Precio $')
+    idpago=models.IntegerField(primary_key=True, verbose_name='Id pago')
+    run=models.CharField(max_length=10, verbose_name='Rut Medico') 
+    nombrecliente=models.CharField(max_length=50, verbose_name='Nombre Cliente') 
+    precio=models.IntegerField(verbose_name='Precio')
     
     def __str__(self):
         return self.idpago
