@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,
+    maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Pagina de ventas de articulos de pinturas online">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keyword" content="Vender,Venta,Pinturas,Vender Online,Comprar Online,Todo medio de pagos" />
+
+    <!--CSS BOOTSTRAP-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--CSS-->
+    <link rel="Stylesheet" href="{% static 'core/css/estilos.css'%}">
+
+    <!-- BOOTRSTRAP JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!--Header con Menu buscador y Demaces -->
+    <div>
+        <header>
+            <title>Centro Medico Galeno - Pagina de Centro Medico Galeno</title>
+            <hr size="10px" color="black" />
+            <div class=container>
+                <form class="form-inline my-5 my-lg-2">
+                    <a class="navbar-brand" id=logo href="{% url 'index' %}"><img
+                            src="{% static 'core/img/logomedico.png'%}" height="55vw" width="55vw"></a>
+                    <h3>Centro Medico Galeno </h3>
+                    <hr>
+                    <div>
+                        <input class="form-control mr-sm-2" id=buscarpag type="search" size="45"
+                            placeholder="Buscar Medico" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <b>Cuenta</b>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'iniciarsesion' %}">Iniciar Sesion</a>
+                            <a class="dropdown-item" href="{% url 'registrar' %}">Registrar</a>
+                            <a class="dropdown-item" href="{% url 'cajeropagar' %}">Interfaz Cajero</a>
+                            <a class="dropdown-item" href="{% url 'secretaria' %}">Interfaz Secretaria</a>
+                            <a class="dropdown-item" href="{% url 'medico' %}">Interfaz Medico</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" id=menuu>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'index' %}"><b>Inicio</b> <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'medicos' %}"><b>Medicos</b></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'reservarhora' %}" tabindex="-1"
+                                aria-disabled="true"><b>Reservar
+                                    Hora</b></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+        <hr size="10px" color="black" />
+        <h1>MODIFICAR AGENDA MEDICO</h1>
+        <br>
+    
+        <div class="container">
+    
+            <div class="row">
+                <form method="post" action="" id="formulario">
+                    {% csrf_token %}
+                    <div class="row">
+                        {{form.as_table}}
+                        <br>
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-danger" id="enviar" value="Modificar">
+                    <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+                    <div id="error" class="alert alert-danger" role="alert"></div>
+                </form>
+            </div>
+            <br>
+            <div class="row">
+                <div class="alert alert-success" role="alert" id="succes">
+                    {{mensaje}}
+                </div>
+            </div>
+            <div class="row">
+                <a href="{% url 'index' %}">Inicio</a>
+            </div>
+        </div>
+
+
+
+        <hr size="10px" color="black" />
+        <!--FOOTER -->
+        <footer id=footerprincipal>
+            <div class="row">
+                <div class="col-12 col-md">
+
+                    <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted">Telefono: +5697496769</a></li>
+                        <li><a class="text-muted">josalasolivares@gmail.com</a></li>
+                        <li><a class="text-muted">jo.salaso@duocuc.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md">
+                    <h5>Redes</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><a class="text-muted" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Acerca</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="{% url 'medicos' %}">Medicos</a></li>
+                        <li><a class="text-muted" href="{% url 'contacto' %}">Contacto</a></li>
+                        <li><a class="text-muted" href="{% url 'ubicaciones' %}">Ubicacion</a></li>
+                        <li><a class="text-muted">Viña del mar, V region</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+
+</body>
+
+</html>

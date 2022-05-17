@@ -1,0 +1,57 @@
+header{
+    background-color: white;
+}
+
+
+
+body{
+    background-color: #f8f9fa!important;
+}
+
+
+
+#footerprincipal{
+    background: #152F4F;
+    color:white;        
+}
+#iniciarsesionn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#registrarr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#cajas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1 {    
+    text-align: center;
+}
+
+h3{    
+    height: 80%;
+}
+h4{
+    text-align: center;
+}
+
+
+
+
+
+#apiwsp{
+    
+    text-align: center;
+
+}
+
