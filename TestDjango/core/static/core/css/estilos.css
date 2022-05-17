@@ -58,12 +58,6 @@ nav {background-color: #198064;}
 section{background-color: #ffffff3a;}
 footer{background-color: rgba(58, 25, 241, 0);}
 
-label{
-	color: rgb(32, 32, 32)}
-	body.dark label{
-		color: #eaf5f2;
-	}
-
 h1 {
     background-color: rgb(63, 88, 72);
     color: rgb(255, 255, 255);
@@ -86,16 +80,12 @@ h3 {
 }
 
 h4 {
-    color: rgb(32, 32, 32);}
-	body.dark h4{
-		color: #eaf5f2;
-	}
+    color: rgb(225, 255, 255);
+}
 
 h5 {
-    color: rgb(32, 32, 32);}
-	body.dark h5{
-		color: #eaf5f2;
-	}
+    color: rgb(225, 255, 255);
+}
 
 h6{
 	font-family: 'Indie Flower', cursiva;
@@ -285,10 +275,24 @@ body.dark .col_third .box2{
 
 .container{
     display: flex;
-	overflow: hidden;
-
 }
 
+
+/*Quienes somos*/
+
+.cont {
+	height: 100;
+
+}
+.texto {
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	right: 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+ }
 
 h6 {
 font-size: block;
@@ -355,16 +359,3 @@ h6::after{
 	color: #fff;
 }
 
-/*quien somos*/
-
-.imgqs{
-	margin: 1em;
-	float: left;
-	padding: 1%;
-}
-
-.info{
-	margin: 1em;
-	float: right;
-	padding: 1%;
-}
