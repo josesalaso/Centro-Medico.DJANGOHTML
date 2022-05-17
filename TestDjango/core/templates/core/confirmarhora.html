@@ -150,25 +150,18 @@
                 <br>
                 <input type="submit" class="btn btn-danger" id="enviar" value="Confirmar Hora">
                 <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
-                <a href="{% url 'index' %}" class="btn btn-primary">Inicio</a>
+
             </form>
         </div>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <div class="row">
-            <br>
             <div class="alert alert-success" role="alert" id="succes">
                 {{mensaje}}
-                <br>
-                
             </div>
         </div>
-        <br>
-        <br>
-        
+        <div class="row">
+            <a href="{% url 'index' %}">Inicio</a>
+        </div>
     </div>
     <br>
 
