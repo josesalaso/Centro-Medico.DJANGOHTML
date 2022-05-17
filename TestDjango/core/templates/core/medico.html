@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 0d0c218 (limpieza pagina 2 y cambio de nombres verdaderos a paginas)
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
@@ -14,6 +18,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+<<<<<<< HEAD
+=======
+    <!--Estilos-->
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/cb0043138a.js" crossorigin="anonymous"></script>
+    <link href = "https://fonts.googleapis.com/css2? family = Indie + Flower & display = swap" rel = "hoja de estilo">
+
+>>>>>>> parent of 0d0c218 (limpieza pagina 2 y cambio de nombres verdaderos a paginas)
     <!--CSS-->
     <link rel="Stylesheet" href="{% static 'core/css/estilos.css'%}">
 
@@ -34,6 +46,7 @@
     
     <!--Header con Menu buscador y Demaces -->
     <div>
+<<<<<<< HEAD
         <header>
             <title>Centro Medico Galeno - Pagina de Centro Medico Galeno</title>
             <hr size="10px" color="black" />
@@ -112,6 +125,108 @@
             </div>
         </div>
 
+=======
+        <div id="Contenedor">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <a class="navbar-brand" href="{% url 'index'%}">
+                <img src="{% static 'core/img/logo.png'%}" height="55vw" width="55vw">
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+      
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index'%}">Inicio <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Reservas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="" tabindex="-1" aria-disabled="true">Contactanos</a>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  <!--Buscador-->
+                  <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                  {% if user.is_authenticated%}
+                  <li>
+                    <a href="{% url 'logout' %}">Cerrar Sesion</a>
+                  </li>
+                  {% else %}
+                  <li>
+                    <a href="{% url 'login' %}">Iniciar Sesion</a>
+                  </li>  
+                  {% endif %}
+                </form>
+              </div>
+            </nav>
+        </header>
+        <!-- CARRUSEL BOOSTRAP -->
+        
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="10000">
+                        <img src="{% static 'core/img/inicia Sesion.jpg'%}" class="d-block w-100" alt="Inti Castro"
+                            width="450px" height="500px"></a>
+                </div>
+                <div class="carousel-item" data-interval="2000">
+                        <img src="{% static 'core/img/registro.jpg'%}" class="d-block w-100" alt="..."
+                            width="450px" height="500px"></a>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </div>
+
+    <hr size="10px" color="black" />
+    <h1>USUARIO CONCERJE</h1>
+    <br>
+    <div class="container" id=cajas>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">CONSULTAR GASTO COMUN MENSUAL</h5>
+                <a href="{% url 'comprobantepago' %}" class="btn btn-primary">IR</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">AGREGAR ESPACIO CONDOMINIO</h5>
+                <a href="{% url 'agregaragenda' %}" class="btn btn-primary">IR</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">CONSULTAR/RESERVAR ESPACIOS CONDOMINIO</h5>
+                <a href="{% url 'reservarhora' %}" class="btn btn-primary">IR</a>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <hr size="10px" color="black" />
+
+    <br>
+    <h4>Quienes Somos</h4>
+    <br>
+    <br>
+
+    
+>>>>>>> parent of 0d0c218 (limpieza pagina 2 y cambio de nombres verdaderos a paginas)
 
 
 
@@ -135,14 +250,23 @@
             <div class="col-6 col-md">
                 <h5>Redes</h5>
                 <ul class="list-unstyled text-small">
+<<<<<<< HEAD
                     <li><a class="text-muted" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
                     <li><a class="text-muted" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+=======
+                    <li><img src="{% static 'core/img/insta logo.png'%}" height="10%" width="10%"><a class="text-muted" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                    <li><img src="{% static 'core/img/face logo.png'%}" height="10%" width="10%"><a class="text-muted" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+>>>>>>> parent of 0d0c218 (limpieza pagina 2 y cambio de nombres verdaderos a paginas)
                 </ul>
             </div>
             <div class="col-6 col-md">
                 <h5>Acerca</h5>
                 <ul class="list-unstyled text-small">
+<<<<<<< HEAD
                     <li><a class="text-muted" href="{% url 'medicos' %}">Medicos</a></li>
+=======
+                    <li><a class="text-muted" href="{% url 'medicos' %}">Administradores</a></li>
+>>>>>>> parent of 0d0c218 (limpieza pagina 2 y cambio de nombres verdaderos a paginas)
                     <li><a class="text-muted" href="{% url 'contacto' %}">Contacto</a></li>
                     <li><a class="text-muted" href="{% url 'ubicaciones' %}">Ubicacion</a></li>
                     <li><a class="text-muted">Viña del mar, V region</a></li>
@@ -151,7 +275,14 @@
         </div>
     </footer>
 
+<<<<<<< HEAD
 
 </body>
 
+=======
+<!--JS-->
+<script src="{% static 'core/js/Index.js'%}"></script>
+
+</body>
+>>>>>>> parent of 0d0c218 (limpieza pagina 2 y cambio de nombres verdaderos a paginas)
 </html>
